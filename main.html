@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>smogmoss.com</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Style for the trigger image */
+    .dropdown img {
+      width: 100px;
+      cursor: pointer;
+      border-radius: 0px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .dropdown img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: TRANSPARENT);
+      padding: 0px;
+      border-radius: 0px;
+      z-index: 1;
+    }
+
+    /* Dropdown items (images) */
+    .dropdown-content img {
+      width: 50px;
+      margin: 0px;
+      cursor: pointer;
+      border-radius: 0px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .dropdown-content img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="wave-header">
+    <h1>smog moss.com</h1>
+  </header>
+<!-------------------------------------------------------------------DROPDOWN--|----------------------->
+<!-----------------------------------------------------------------------------V----------------------->
+  <center>
+    <div class="dropdown">
+      <!-- Trigger Image -->
+      <img id="menu-icon" src="Images/face1.png" alt="Menu Icon" onclick="toggleDropdown()">
+      
+      <!-- Dropdown Content (Image Menu) -->
+      <div class="dropdown-content" id="dropdown-menu">
+	<a href="smogmossVIDS.html">
+        <img src="Images/face1.png" alt="VIDS">
+	</a>
+        <img src="Images/face1.png" alt="PICS">
+        <img src="Images/face1.png" alt="MUSIC">
+        <img src="Images/face1.png" alt="MERCH">
+        <img src="Images/face1.png" alt="SHOWS">
+        <img src="Images/face1.png" alt="BLOG">
+      </div>
+    </div>
+  </center>
+
+  <script>
+    let isOpen = false;
+    let defaultIcon = "Images/face1.png"; // Default icon
+    let openIcon = "Images/face2.png"; // Open icon
+
+    function toggleDropdown() {
+      let menu = document.getElementById("dropdown-menu");
+      let icon = document.getElementById("menu-icon");
+
+      if (isOpen) {
+        menu.style.display = "none";
+        icon.src = defaultIcon; // Revert to default icon
+      } else {
+        menu.style.display = "block";
+        icon.src = openIcon; // Change to open icon
+      }
+
+      isOpen = !isOpen;
+    }
+
+    // Close dropdown & reset icon if clicking outside
+    document.addEventListener("click", function(event) {
+      let dropdown = document.querySelector(".dropdown");
+      let icon = document.getElementById("menu-icon");
+
+      if (!dropdown.contains(event.target)) {
+        document.getElementById("dropdown-menu").style.display = "none";
+        icon.src = defaultIcon; // Reset to default icon
+        isOpen = false;
+      }
+    });
+<!------------------------------------------------------------------------------^----------------------->
+<!-------------------------------------------------------------------DROPDOWN---|----------------------->
+
+
+  </script>
+<center>
+<div class="text-with-image">
+Welcome to smog moss website, we love you <3</div>
+</center>
+</body>
+</html>
